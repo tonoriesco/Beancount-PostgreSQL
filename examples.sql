@@ -5,7 +5,7 @@
 SELECT year, account, sum(position) as total  WHERE account ~ 'Expenses:Tino' OR account ~ 'Expenses:Tuno' Group by year,account
 
 -- Translation for PSQL
-SELECT EXTRACT(YEAR FROM date) as Year, account, ROUND(SUM(number)::numeric,2) as Total
+SELECT EXTRACT(YEAR FROM date) as Year, account, SUM(number) as Total
 FROM bean
 WHERE account LIKE '%Expenses:Tino%' 
 OR account LIKE '%Expenses:Tuno%'
@@ -16,7 +16,7 @@ ORDER BY Year
 SELECT year, account, sum(position) as total WHERE account = 'Expenses:Tino:Doctor' and payee != 'INSURANCE'
 
 -- Translation for PSQL
-SELECT EXTRACT(YEAR FROM fecha) as YEAR, account, sum(quantity) as total 
+SELECT EXTRACT(YEAR FROM fecha) as YEAR, account, SUM(number) as total 
 FROM bean
 WHERE account = 'Expenses:Tino:Doctor' and payee != 'INSURANCE'
 GROUP BY YEAR, account
@@ -28,7 +28,7 @@ ORDER BY YEAR;
 SELECT year, account, sum(position) as Paid_by_me WHERE payee = "Clinic Expensive" and account= "Assets:Account:BoA"
 
 -- Translation for PSQL
-SELECT EXTRACT(YEAR FROM date) as Year, account, ROUND(SUM(number)::numeric,2) as "Paid by me"
+SELECT EXTRACT(YEAR FROM date) as Year, account, SUM(number) as "Paid by me"
 FROM bean
 WHERE payee = 'Clinic Expensive' 
 AND account = 'Assets:Account:BoA'

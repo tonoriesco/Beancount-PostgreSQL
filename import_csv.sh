@@ -36,7 +36,7 @@ psql -h $HOST -d $DB -U $DB_USER -c "CREATE TABLE $TABLE(
     payee VARCHAR,  
     narration VARCHAR, 
     account VARCHAR, 
-    number real, 
+    number NUMERIC, 
     currency VARCHAR, 
     tags VARCHAR 
 );"
