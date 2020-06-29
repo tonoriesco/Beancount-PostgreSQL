@@ -16,7 +16,7 @@ ORDER BY Year
 SELECT year, account, sum(position) as total WHERE account = 'Expenses:Tino:Doctor' and payee != 'INSURANCE'
 
 -- Translation for PSQL
-SELECT EXTRACT(YEAR FROM fecha) as YEAR, account, SUM(number) as total 
+SELECT EXTRACT(YEAR FROM date) as YEAR, account, SUM(number) as total 
 FROM bean
 WHERE account = 'Expenses:Tino:Doctor' and payee != 'INSURANCE'
 GROUP BY YEAR, account
