@@ -2,6 +2,9 @@
 
 The main objective of all those scripts is having the complete ledger of Beancount
 inserted in a table of a PosgreSQL Database.
+
+## import_csv
+
 The file **import_csv.sh** do:
 
 * Delete (if exist) the old table with all the transactions
@@ -21,3 +24,11 @@ Do not add string quotes around your field values.
 You can also use * as a wildcard for your port/database fields.
 
 You must chmod 0600 ~/.pgpass in order for it to not be silently ignored by psql.
+
+## import_prices
+
+With this script, you can import into a table 'prices' in the database bean the data from your prices.bean file.
+This file is filled running:
+> bean-price --no-cache main.bean >> prices.bean
+
+Normally in a cron or at regular times to have all the values. An example of this prices.bean in included.
