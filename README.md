@@ -29,6 +29,6 @@ You must chmod 0600 ~/.pgpass in order for it to not be silently ignored by psql
 
 With this script, you can import into a table 'prices' in the database defined the data from your prices.bean file.
 The file prices.bean is filled running:
-> # bean-price --no-cache main.bean >> prices.bean
+> bean-price --no-cache main.bean >> prices.bean
 
 Normally in a cron or at regular times to have all the values. An example of this prices.bean in included.
